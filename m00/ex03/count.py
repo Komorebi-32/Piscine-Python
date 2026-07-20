@@ -47,3 +47,17 @@ def text_analyzer(s=None):
 #more elegant alternative:
 # upper = sum(1 for c in s if c.isupper())
 #produces a 1 for each upper char, then sums those ones
+
+#this code runs only if the file count.py is executed directly
+#Every Python file has a built-in variable called __name__.
+# If you run the file directly: `python3 count.py`
+# then __name__ is set to "__main__".
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        text_analyzer()
+    elif len(sys.argv) == 2:
+        text_analyzer(sys.argv[1])
+    else:
+        print("Error: Too many arguments")
+        sys.exit(1)
