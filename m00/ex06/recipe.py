@@ -24,10 +24,21 @@ def print_recipe_names():
 
 
 def print_recipe_details(name):
-    for x in cookbook[name]:
-        print(cookbook[name][x])
+    try:
+        for x in cookbook[name]:
+            print(cookbook[name][x])
+    except KeyError:
+        print("The recipe is not (yet?) in the cookbook")
+
+
+def delete_recipe(name):
+    try:
+        cookbook.pop(name)
+    except KeyError:
+        print("The recipe is not (yet?) in the cookbook")
 
 
 if __name__ == "__main__":
+    cookbook.pop("Cake")
     s = input("Input a recipe\n")
     print_recipe_details(s)
