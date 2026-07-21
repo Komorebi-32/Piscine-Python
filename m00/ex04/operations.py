@@ -6,6 +6,7 @@ LABEL_WIDTH = 12
 def print_aligned(label, value):
     print(f"{label:<{LABEL_WIDTH}}{value}")
 
+
 if len(sys.argv) == 1:
     print("Usage: python3 operations.py <number1> <number2>")
     sys.exit(1)

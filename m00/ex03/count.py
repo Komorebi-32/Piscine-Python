@@ -1,13 +1,14 @@
 import sys
 import string as st
 
-#This function counts the number of upper characters, lower characters,
-#punctuation and spaces in a given text.
-#c.isupper() counts upper-case letters
-#c.islower() counts lower-case letters
-#c in string.punctuation counts punctuation
-#c == " " counts spaces only
-#c.isprintable() counts printable characters
+
+# This function counts the number of upper characters, lower characters,
+# punctuation and spaces in a given text.
+# c.isupper() counts upper-case letters
+# c.islower() counts lower-case letters
+# c in string.punctuation counts punctuation
+# c == " " counts spaces only
+# c.isprintable() counts printable characters
 # `s=None` as an arg means that if a user calls `text_analyzer()`, the arg 
 # becomes `None`
 def text_analyzer(s=None):
@@ -44,14 +45,15 @@ def text_analyzer(s=None):
         print("Error: argument is not a string")
         sys.exit(1)
 
-#more elegant alternative:
+# more elegant alternative:
 # upper = sum(1 for c in s if c.isupper())
-#produces a 1 for each upper char, then sums those ones
+# produces a 1 for each upper char, then sums those ones
 
-#this code runs only if the file count.py is executed directly
-#Every Python file has a built-in variable called __name__.
+# this code runs only if the file count.py is executed directly
+# Every Python file has a built-in variable called __name__.
 # If you run the file directly: `python3 count.py`
 # then __name__ is set to "__main__".
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
