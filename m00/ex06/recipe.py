@@ -38,7 +38,30 @@ def delete_recipe(name):
         print("The recipe is not (yet?) in the cookbook")
 
 
+def add_recipe():
+    try:
+        name = input("Enter a name:\n")
+        ingredients = []
+        print("Enter ingredients:")
+        while True:
+            ingredient = input()
+            if ingredient == "":
+                break
+            ingredients.append(ingredient)
+
+        meal = input("Enter a meal type:\n")
+        prep_time = int(input("Enter a prep time:\n"))
+        cookbook[name] = {
+            "ingredients": ingredients,
+            "meal": meal,
+            "prep_time": prep_time,
+        }
+    except ValueError:
+        print("Prep time must be an integer")
+
+
 if __name__ == "__main__":
     cookbook.pop("Cake")
-    s = input("Input a recipe\n")
+    add_recipe()
+    s = input("Choose a recipe to show details\n")
     print_recipe_details(s)
