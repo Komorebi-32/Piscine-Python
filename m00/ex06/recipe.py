@@ -16,3 +16,12 @@ cookbook = {
         "prep_time": 15
     }
 }
+
+
+def print_recipe_names():
+    for x in cookbook.items():
+        print(x[0])
+
+
+if __name__ == "__main__":
+    print_recipe_names()
