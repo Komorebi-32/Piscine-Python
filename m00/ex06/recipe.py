@@ -23,5 +23,11 @@ def print_recipe_names():
         print(x[0])
 
 
+def print_recipe_details(name):
+    for x in cookbook[name]:
+        print(cookbook[name][x])
+
+
 if __name__ == "__main__":
-    print_recipe_names()
+    s = input("Input a recipe\n")
+    print_recipe_details(s)
