@@ -49,7 +49,11 @@ class Book:
         for recipe in recipes:
             print(recipe.name)   # or print(recipe) if you want full details
         return recipes
-    
-    
-    # def add_recipe(self, recipe):
-    #     """Adds a recipe to the book and updates last_update"""
+
+    def add_recipe(self, recipe):
+        """Adds a recipe to the book and updates last_update"""
+
+        if not isinstance(recipe, Recipe):
+            print("Input Error: recipe must be a Recipe instance")
+            sys.exit(1)
+        self.recipes_list[recipe.recipe_type].append(recipe)
