@@ -40,5 +40,5 @@ class Recipe:
         txt += "Cooking time: " + str(self.cooking_time) + '\n'
         txt += "Ingredients: " + str(self.ingredients) + '\n'
         txt += "Description: " + str(self.description) + '\n'
-        txt += "Recipe type: " + self.recipe_type
+        txt += "Recipe type: " + self.recipe_type + '\n'
         return txt

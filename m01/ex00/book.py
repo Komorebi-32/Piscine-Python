@@ -1,4 +1,5 @@
 import sys
+from recipe import Recipe
 from datetime import datetime
 
 
@@ -23,3 +24,19 @@ class Book:
         self.last_update = creation_date
         self.creation_date = creation_date
         self.recipes_list = recipes_list
+
+    def get_recipe_by_name(self, name):
+        """Prints a recipe with the name \texttt{name} and returns the instance"""
+        for recipe in self.recipes_list.values():
+            if recipe.name == name:
+                print(recipe)
+                return recipe
+        print("Recipe does not exist")
+        return None
+
+    # def get_recipes_by_types(self, recipe_type):
+    #     """Gets all recipes names for a given recipe_type """
+    
+    
+    # def add_recipe(self, recipe):
+    #     """Adds a recipe to the book and updates last_update"""
