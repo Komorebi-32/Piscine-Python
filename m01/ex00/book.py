@@ -27,15 +27,28 @@ class Book:
 
     def get_recipe_by_name(self, name):
         """Prints a recipe with the name \texttt{name} and returns the instance"""
-        for recipe in self.recipes_list.values():
-            if recipe.name == name:
-                print(recipe)
-                return recipe
+        for recipe_type in self.recipes_list.values():
+            for i in recipe_type:
+                if i.name == name:
+                    print(i)
+                    return i
         print("Recipe does not exist")
         return None
 
-    # def get_recipes_by_types(self, recipe_type):
-    #     """Gets all recipes names for a given recipe_type """
+    def get_recipes_by_types(self, recipe_type):
+        """Gets all recipes names for a given recipe_type """
+        if recipe_type not in self.recipes_list:
+            print("Invalid recipe type")
+            return []
+
+        recipes = self.recipes_list[recipe_type]
+        if not recipes:
+            print("No recipe of this type exists in the cookbook")
+            return []
+
+        for recipe in recipes:
+            print(recipe.name)   # or print(recipe) if you want full details
+        return recipes
     
     
     # def add_recipe(self, recipe):

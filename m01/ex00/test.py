@@ -17,13 +17,20 @@ panna_cotta = Recipe("Panna Cotta", 2, 20, ["cream", "sugar", "gelatin"], "Silky
 cannoli = Recipe("Cannoli", 4, 60, ["ricotta", "flour", "sugar"], "Crispy Sicilian pastry", "dessert")
 
 recipes_list = {
-    "starter": [bruschetta, caprese, arancini]
-    "lunch": [lasagna, risotto, osso_buco]
+    "starter": [bruschetta, caprese, arancini],
+    "lunch": [lasagna, risotto, osso_buco],
     "dessert": [tiramisu, panna_cotta, cannoli]
 }
 yummy_book = Book("Yummy Book!", datetime.now(), recipes_list)
 
+print("-----------get_recipe_by_name() tests----------\n")
+print("Should find Lasagnas:\n")
 yummy_book.get_recipe_by_name("Lasagnas")
+print("Should find Tiramisu:\n")
 yummy_book.get_recipe_by_name("Tiramisu")
+print("Should not find anything (input abc):\n")
 yummy_book.get_recipe_by_name("abc")
 
+print("\n-----------get_recipes_by_types() tests----------\n")
+print("Should find all the starter meals:\n")
+yummy_book.get_recipes_by_types("starter")
