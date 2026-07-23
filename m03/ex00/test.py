@@ -9,3 +9,7 @@ print(array)
 print("\nempty(4, 4)\n")
 array = NumPyCreator().random((4, 4))
 print(array)
+
+print("\nidentity(3)\n")
+array = NumPyCreator().identity(3)
+print(array)

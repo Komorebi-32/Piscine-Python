@@ -3,10 +3,14 @@ import numpy as np
 
 class NumPyCreator:
     def from_list(self, lst):
+        if not isinstance(lst, list):
+            return None
         return (np.array(lst))
 
     def from_tuple(self, tpl):
-        return self.from_list(tpl)
+        if not isinstance(tpl, tuple):
+            return None
+        return np.array(tpl)
 
     def from_iterable(self, itr):
         return np.fromiter(itr, float)
@@ -23,3 +27,7 @@ class NumPyCreator:
         """returns an array filled with random values. It takes as an
         argument a tuple which specifies the shape of the array."""
         return np.random.rand(*shape)
+
+    def identity(self, n):
+        """returns an array representing the identity matrix of size n."""
+        return np.identity(n)
