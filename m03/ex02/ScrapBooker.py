@@ -46,3 +46,41 @@ class ScrapBooker:
         bottom_right_y = pos_y + dim_height
         crop = array[pos_y:bottom_right_y, pos_x:bottom_right_x]
         return crop
+
+    def thin(self, array, n, axis):
+        """
+        Deletes every n-th line pixels along the specified axis (0: vertical, 1: horizontal)
+        Args:
+        -----
+        array: numpy.ndarray.
+        n: non null positive integer lower than the number of row/column of the array
+                (depending of axis value).
+        axis: positive non null integer.
+
+        Returns:
+        -------
+        new_arr: thined numpy.ndarray.
+        None: (if the combination of parameters is not possible).
+
+        Raises:
+        ------
+        This function should not raise any Exception.
+        """
+        height, width = array.shape
+        if axis == 0:
+            if n > width:
+                print("Error: n must be lower than the number of columns")
+                return None
+            lines_to_delete = list(range(n - 1, width, n))
+            axis_delete = 1
+        elif axis == 1:
+            if n > height:
+                print("Error: n must be lower than the number of rows")
+                return None
+            lines_to_delete = list(range(n - 1, height, n))
+            axis_delete = 0
+        else:
+            print("Error: axis must be 0 or 1")
+            return None
+
+        return np.delete(array, lines_to_delete, axis_delete)
