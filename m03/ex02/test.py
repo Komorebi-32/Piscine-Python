@@ -10,3 +10,19 @@ arr1 = np.arange(0, 25).reshape(5, 5)
 crop = spb.crop(arr1, (3, 1), (1, 0))
 print(arr1)
 print(crop)
+
+crop = spb.crop(arr1, (6, 1), (1, 0))
+print(arr1)
+print(crop)
+
+crop = spb.crop(arr1, (3, 6), (1, 0))
+print(arr1)
+print(crop)
+
+crop = spb.crop(arr1, (3, 1), (-1, 0))
+print(arr1)
+print(crop)
+
+crop = spb.crop(arr1, (6, 1, 3), (1, 0))
+print(arr1)
+print(crop)
