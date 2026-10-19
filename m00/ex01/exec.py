@@ -1,3 +1,17 @@
+"""Reverse and swap case of the command-line input string.
+
+This script concatenates all command-line arguments (after the script name)
+into a single string separated by spaces, reverses the resulting string,
+and swaps the case of each character, then prints the transformed string.
+
+Usage:
+    python3 exec.py Hello world
+
+Example:
+    Input:  Hello world
+    Output: DLROw OLLEh
+"""
+
 import sys
 
 if len(sys.argv) < 2:
